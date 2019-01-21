@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <body class='container'>
+    <p>What's for dinner?</p>
+    <form action='cast' method='post'>
+      <select id="nivel" name="nivel">
+        <option selected="">Graduação</option>
+        <option>Especialização</option>
+        <option>Mestrado</option>
+        <option>Doutorado</option>
+      </select>
+      <p></p>
+      <select id="tipo" name="tipo">
+        <option selected="">Projeto ou Proposta para Qualificação/Avaliação</option>
+        <option>Trabalho final (em produção ou finalizado)</option>
+      </select>
+      <ul class='unstyled'>
+        <% Choices.each do |id, text| %>
+        <li>
+          <label class='radio'>
+            <input type='radio' name='vote' value='<%= id %>' id='vote_<%= id %>' />
+            <%= text %>
+          </label>
+        </li>
+        <% end %>
+      </ul>
+      <button type='submit' class='btn btn-primary'>Cast this vote!</button>
+    </form>
+  </body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <body class='container'>
+    <h2>Nível de Educação do Trabalho</h2>
+    <form action='folha' method='post'>
+      <select name="nivel">
+        <option selected="">Graduação</option>
+        <option>Especialização</option>
+        <option>Mestrado</option>
+        <option>Doutorado</option>
+      </select>
+      <p></p>
+      <h3>Projeto ou Proposta</h3>
+      <select name="tipo">
+        <option selected="">Projeto ou Proposta para Qualificação/Avaliação</option>
+        <option>Trabalho final (em produção ou finalizado)</option>
+      </select>
+      <h2>Configurando a Capa</h2>
+      <h3>Instituição</h3>
+      <input name="instituicao" type="text" placeholder="Universidade/Instituto/Faculdade" />
+      <h3>Autor</h3>
+      <input name="author" type="text" placeholder="Autor do Trabalho" />
+      <h3>Título</h3>
+      <input name="title" type="text" placeholder="Título do Trabalho" />
+      <h3>Ano de apresentação</h3>
+      <input name="date" type="text" placeholder="2018" />
+      <h3>Local</h3>
+      <input name="local" type="text" placeholder="Cidade - UF" />
+      <p></p>
+      <button type='submit' class='btn btn-primary'>Enviar</button>
+    </form>
+  </body>
+
+</html>

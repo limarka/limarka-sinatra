@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  <body class='container'>
+    <h2>Configurando a Folha de Rosto</h2>
+    <form action='siglas' method='post'>
+      <h3>Orientador</h3>
+      <input name="orientador" type="text" placeholder="Nome do Orientador" />
+      <h3>Coorientador</h3>
+      <input name="coorientador" type="text" placeholder="Nome do Coorientador" />
+      <h3>Área de concentração (Ex: Computação)</h3>
+      <input name="area_concentracao" type="text" placeholder="Computação" />
+      <h3>Titulação que será obtida</h3>
+      <input name="titulacao" type="text" placeholder="Minha titulação" />
+      <h3>Seu trabalho é uma Monografia?</h3>
+      <input name="curso" type="curso" placeholder="Meu curso" />
+      <h3>Seu trabalho é uma Dissertação ou Tese?</h3>
+      <h4>Programa</h4>
+      <input type="text" name="programa" placeholder="Programa de Pós-Graduação em XXX" />
+      <h4>Linha de pesquisa</h4>
+      <input type="text" name="linha_de_pesquisa" placeholder="Linha de pesquisa" />
+      <h3>Propósito personalizado</h3>
+      <!--
+      -->
+      <textarea id="proposito" name="proposito" type="text" rows="5" cols="100" placeholder="Propósito"></textarea>
+      <p></p>
+      <button type='submit' class='btn btn-primary'>Enviar</button>
+    </form>
+    <p><a href='/siglas'>Lista de Siglas e Simbolos!</a></p>
+    <p><a href='/resultados'>Veja os resultados!</a></p>
+  </body>
+
+</html>
