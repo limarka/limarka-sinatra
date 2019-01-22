@@ -85,7 +85,7 @@ get '/' do
 end
 
 
-post '/folha' do
+get '/folha' do
   @titulo = 'Folha de Rosto'
   ha = params.to_json
   ya = JSON.load(ha).to_yaml
@@ -93,27 +93,22 @@ post '/folha' do
   erb :folha
 end
 
-post '/siglas' do
-  @titulo = 'Lista de Siglas'
+get '/siglas_simbolos' do
+  @titulo = 'Lista de Siglas e Simbolos'
   ha = params.to_json
   ya = JSON.load(ha).to_yaml
   ya = ya[4...-1]  
   store_yaml("configuracao.yaml", ya)
-  erb :siglas
+  erb :siglas_simbolos
 end
 
-post '/simbolos' do
-  @titulo = 'Lista de Simbolos'
+get '/resultados' do
+  @titulo = 'Obrigado por utilizar este formulário e o Limarka!'
   ha = params['siglas']
   ya = lista_siglas(ha)
   ya = hash_to_yaml(ya)
   ya = ya[4...-1]  
   store_yaml("configuracao.yaml", ya)
-  erb :simbolos
-end
-
-post '/resultados' do
-  @titulo = 'Obrigado por utilizar este formulário e o Limarka!'
   ha = params['simbolos']
   ya = lista_simbolos(ha)
   ya = hash_to_yaml(ya)

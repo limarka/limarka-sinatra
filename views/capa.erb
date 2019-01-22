@@ -1,7 +1,5 @@
 <h2>Nível de Educação do Trabalho</h2>
-<form action='folha' method='post' class="class="form-horizontal"">
-
-
+<form action='folha' method='get' class="class="form-horizontal"">
   <select name="nivel" class="form-control">
     <option selected="">Graduação</option>
     <option>Especialização</option>
@@ -14,7 +12,8 @@
     <option selected="">Projeto ou Proposta para Qualificação/Avaliação</option>
     <option>Trabalho final (em produção ou finalizado)</option>
   </select>
-  <h1>Capa</h1>
+  <p></p>
+  <h2>Capa</h2>
   <div class="form-group">
     <label for="instituicao">Instituição</label>
     <input type="text" class="form-control" id="instituicao" placeholder="Universidade/Instituto/Faculdade" name="instituicao">
@@ -39,6 +38,11 @@
 
   <p></p>
   <button type='submit' class='btn btn-primary btn-lg'>Enviar</button>
+  <p></p>
+  
+  <p><a href='/folha'>Folha de Rosto</a></p>
+
+  <p><a href='/siglas_simbolos'>Lista de Siglas e Simbolos</a></p>
 
   <p><a href='/resultados'>Fechar formulário!</a></p>
 
