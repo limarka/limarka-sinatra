@@ -1,5 +1,5 @@
 # limarka-sinatra
-Formulário em HTML para o Limarka usando o Sinatra
+Formulário em HTML para o Limarka usando Sinatra
 
 ## Instalando dependências
 
