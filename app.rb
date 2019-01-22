@@ -89,7 +89,6 @@ post '/folha' do
   @titulo = 'Folha de Rosto'
   ha = params.to_json
   ya = JSON.load(ha).to_yaml
-  ya = ya[4...-1]  
   store_yaml("configuracao.yaml", ya)
   erb :folha
 end
@@ -114,7 +113,7 @@ post '/simbolos' do
 end
 
 post '/resultados' do
-  @titulo = 'Obrigado por votar!'
+  @titulo = 'Obrigado por utilizar este formulário e o Limarka!'
   ha = params['simbolos']
   ya = lista_simbolos(ha)
   ya = hash_to_yaml(ya)
