@@ -1,25 +1,87 @@
-    <p>What's for dinner?</p>
-    <form action='cast' method='post'>
-      <select id="nivel" name="nivel">
-        <option selected="">Graduação</option>
-        <option>Especialização</option>
-        <option>Mestrado</option>
-        <option>Doutorado</option>
-      </select>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>configuracao</title>
+    <!-- Required meta tags -->
+    <meta charset='UTF-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' type='text/css' href='../Public/stylesheets/bootstrap.min.css'>
+
+  </head>
+  <p></p>
+  <p></p>
+  <h2>Nível de Educação do Trabalho</h2>
+  <form action='resultados' method='get' class="class="form-horizontal"">
+    <select name="nivel" class="form-control">
+      <option selected="">Graduação</option>
+      <option>Especialização</option>
+      <option>Mestrado</option>
+      <option>Doutorado</option>
+    </select>
+    <p></p>
+    <h3>Projeto ou Proposta</h3>
+    <select name="tipo" class="form-control">
+      <option selected="">Projeto ou Proposta para Qualificação/Avaliação</option>
+      <option>Trabalho final (em produção ou finalizado)</option>
+    </select>
+    <p></p>
+    <h1><b>Capa</b></h1>
+    <div class="form-group">
+      <label for="instituicao">Instituição</label>
+      <input type="text" class="form-control" id="instituicao" placeholder="Universidade/Instituto/Faculdade" name="instituicao">
+    </div>
+    <div class="form-group">
+      <label for="author">Autor</label>
+      <input type="text" class="form-control" id="author" placeholder="Autor do Trabalho" name="author">
+    </div>
+    <div class="form-group">
+      <label for="title">Título do trabalho</label>
+      <input id="title" placeholder="Título do Trabalho" name="title" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="title">Ano de apresentação</label>
+      <input id="number" placeholder="2019" name="date" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="local">Local</label>
+      <input id="local" placeholder="Cidade - UF" name="local" type="text" class="form-control">
+    </div>
+
+    <h1><b>Configurando a Folha de Rosto</b></h1>
+      <h3>Orientador</h3>
+      <input name="orientador" type="text" placeholder="Nome do Orientador" class="form-control"/>
+      <h3>Coorientador</h3>
+      <input name="coorientador" type="text" placeholder="Nome do Coorientador" class="form-control" />
+      <h3>Área de concentração (Ex: Computação)</h3>
+      <input name="area_concentracao" type="text" placeholder="Computação" class="form-control"/>
+      <h3>Titulação que será obtida</h3>
+      <input name="titulacao" type="text" placeholder="Minha titulação" class="form-control"/>
       <p></p>
-      <select id="tipo" name="tipo">
-        <option selected="">Projeto ou Proposta para Qualificação/Avaliação</option>
-        <option>Trabalho final (em produção ou finalizado)</option>
-      </select>
-      <ul class='unstyled'>
-        <% Choices.each do |id, text| %>
-        <li>
-          <label class='radio'>
-            <input type='radio' name='vote' value='<%= id %>' id='vote_<%= id %>' />
-            <%= text %>
-          </label>
-        </li>
-        <% end %>
-      </ul>
-      <button type='submit' class='btn btn-primary'>Cast this vote!</button>
-    </form>
+      <h2><b>Seu trabalho é uma Monografia?</b></h2>
+      <input name="curso" type="curso" placeholder="Meu curso" class="form-control"/>
+      <p></p>
+      <h2><b>Seu trabalho é uma Dissertação ou Tese?</b></h3>
+      <p></p>
+      <h4>Programa</h4>
+      <input type="text" name="programa" placeholder="Programa de Pós-Graduação em XXX" class="form-control"/>
+      <h4>Linha de pesquisa</h4>
+      <input type="text" name="linha_de_pesquisa" placeholder="Linha de pesquisa" class="form-control"/>
+      <h3>Propósito personalizado</h3>
+      <!--
+      -->
+      <textarea id="proposito" name="proposito" type="text" rows="5" placeholder="Propósito" class="form-control"></textarea>
+      <p></p>
+
+      <h2><b>Lista de Siglas</b></h2>
+      <textarea id='siglas' name="siglas" type='text' rows='14' placeholder='SIGLAS: Definição' class="form-control"></textarea>
+
+    
+      <h2><b>Lista de Símbolos</b></h2>
+      <textarea id='simbolos' name="simbolos" type='text' rows='14' placeholder='SIMBOLOS: Definição' class="form-control"></textarea>
+
+      <p></p>
+
+      <button type='submit' class='btn btn-primary'>Enviar</button>
+  </form>
+
+</html>
