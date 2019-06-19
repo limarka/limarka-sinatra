@@ -77,6 +77,7 @@ end
 
 get '/' do
   session!
+  @titulo = 'Formulário em HTML para o Limarka. '
   @author            =  session[:author].to_json
   @nivel             =  session[:nivel]
   @tipo              =  session[:tipo]
@@ -107,7 +108,8 @@ get '/login' do
 end
  
 post '/login' do
-  if params[:tipo] 
+  if params[:tipo]
+    @titulo = 'Formulário em HTML para o Limarka. ' 
     session_start!
     session[:author]            = params[:author]
     session[:nivel]             = params[:nivel]
