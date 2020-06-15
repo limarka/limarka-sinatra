@@ -3,34 +3,30 @@ require 'sinatra/base'
 module Sinatra
   module AppHelpers
 
-    def filename
+    def nome_arquivo
       'configuracao.yaml'
     end
 
-    def load_data
-      return {} unless File.file?(filename)
-      data = YAML.load(File.read(filename))
-      data['siglas'] = hash_to_string(data['siglas']) if data['siglas']
-      data['simbolos'] = hash_to_string(data['simbolos']) if data['simbolos']
-      data
+    def carrega_dados
+      return {} unless File.file?(nome_arquivo)
+      dados = YAML.load(File.read(nome_arquivo))
+      dados['siglas'] = hash_para_string(dados['siglas']) if dados['siglas']
+      dados['simbolos'] = hash_para_string(dados['simbolos']) if dados['simbolos']
+      dados
     end
 
-    def hash_to_string(hashes)
-      output = hashes.map do |hash|
-        "#{hash['s']}: #{hash['d']}"
-      end
-
-      output.join("\n")
+    def hash_para_string(hashes)
+      hashes.map { |hash| "#{hash['s']}: #{hash['d']}" }.join("\n")
     end
 
-    def save_data(data)
-      File.open(filename,'w') { |h| h.write JSON.load(data.to_json).to_yaml }
+    def salva_dados(dados)
+      File.open(nome_arquivo,'w') { |h| h.write JSON.load(dados.to_json).to_yaml }
     end
 
-    def lista(sigla)
-      sigla.split("\n").map do |linha|
-        key, value = linha.split(':')
-        { 's' => key.strip, 'd' => value ? value.strip : ''} if key
+    def lista(texto)
+      texto.split("\n").map do |linha|
+        chave, valor = linha.split(':')
+        { 's' => chave.strip, 'd' => valor ? valor.strip : ''} if chave
       end
     end
   end

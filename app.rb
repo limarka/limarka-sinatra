@@ -31,7 +31,7 @@ ListaTab = {
 
 get '/' do
   @titulo = 'Formulário em HTML para o Limarka '
-  @data = load_data
+  @dados = carrega_dados
   erb :index
 end
 
@@ -41,11 +41,6 @@ post '/update' do
     params['siglas'] = lista(params['siglas'])
     params['simbolos'] = lista(params['simbolos'])
 
-    save_data(params)
+    salva_dados(params)
     redirect '/'
-end
-
-get '/logout' do
-  session_end!
-  redirect '/'
 end
