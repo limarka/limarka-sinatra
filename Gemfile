@@ -11,7 +11,7 @@ gem "json"
 
 group :development do
 	gem "bundler", ">= 1.12"
-	gem "rake", "~> 12.0"
+	gem "rake", "~> 12.3"
 	gem "rspec", "~> 3.5"
 	gem "pry-byebug"
 	gem "github_changelog_generator"
