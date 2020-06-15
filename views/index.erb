@@ -1,14 +1,10 @@
-      
-      <form method="post" action="/login" class="form-horizontal">
+      <form method="post" action="/update" class="form-horizontal">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
             <label for="nivel">Nível de Educação do Trabalho</label>
             <select name="nivel" class="form-control">
-              <option selected="">Graduação</option>
-              <option>Especialização</option>
-              <option>Mestrado</option>
-              <option>Doutorado</option>
+              <%= select_options(nivel_options, @data['nivel'])%>
             </select>
           </div>
         </div>
@@ -16,9 +12,8 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="tipo">Projeto ou Proposta</label>
-            <select name="tipo" class="form-control">
-              <option>Projeto ou Proposta para Qualificação/Avaliação</option>
-              <option>Trabalho final (em produção ou finalizado)</option>
+            <select name="tipo_do_trabalho" class="form-control">
+              <%= select_options(tipo_do_trabalho_options, @data['tipo_do_trabalho'])%>
             </select>
           </div>
         </div>
@@ -29,31 +24,31 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="title">Título do trabalho</label>
-            <input id="title" placeholder="Título do Trabalho" name="title" type="text" class="form-control" value=<%= @title %>>
+            <input id="title" placeholder="Título do Trabalho" name="title" type="text" class="form-control" value=<%= @data['title'] %>>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="instituicao">Instituição</label>
-            <input type="text" class="form-control" id="instituicao" placeholder="Universidade/Instituto/Faculdade" name="instituicao" value=<%= @instituicao %>>
+            <input type="text" class="form-control" id="instituicao" placeholder="Universidade/Instituto/Faculdade" name="instituicao" value=<%= @data['instituicao'] %>>
           </div>
-          
+
           <div class="form-group">
             <label for="author">Autor</label>
-            <input type="text" class="form-control" id="author" placeholder="Autor do Trabalho" name="author" value=<%= @author %>>
+            <input type="text" class="form-control" id="author" placeholder="Autor do Trabalho" name="author" value=<%= @data['author'] %>>
           </div>
         </div>
-          
+
         <div class="col-md-6">
           <div class="form-group">
             <label for="date">Ano de apresentação</label>
-            <input id="number" placeholder="2019" name="date" type="text" class="form-control" value=<%= @date %>>
+            <input id="number" placeholder="2019" name="date" type="text" class="form-control" value=<%= @data['date'] %>>
           </div>
-          
+
           <div class="form-group">
             <label for="local">Local</label>
-            <input id="local" placeholder="Cidade - UF" name="local" type="text" class="form-control" value=<%= @local %>>
+            <input id="local" placeholder="Cidade - UF" name="local" type="text" class="form-control" value=<%= @data['local'] %>>
           </div>
         </div>
       </div>
@@ -63,63 +58,63 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="orientador">Orientador</label>
-            <input name="orientador" type="text" placeholder="Nome do Orientador" class="form-control" value=<%= @orientador %>>
+            <input name="orientador" type="text" placeholder="Nome do Orientador" class="form-control" value=<%= @data['orientador'] %>>
           </div>
 
           <div class="form-group">
             <label for="coorientador">Coorientador</label>
-            <input name="coorientador" type="text" placeholder="Nome do Coorientador" class="form-control" value=<%= @coorientador %>>
+            <input name="coorientador" type="text" placeholder="Nome do Coorientador" class="form-control" value=<%= @data['coorientador'] %>>
           </div>
 
           <div class="form-group">
             <label for="area_concentracao">Área de concentração <small>(Ex: Computação)</small></label>
-            <input name="area_concentracao" type="text" placeholder="Computação" class="form-control" value=<%= @area_concentracao %>>
+            <input name="area_concentracao" type="text" placeholder="Computação" class="form-control" value=<%= @data['area_concentracao'] %>>
           </div>
 
           <div class="form-group">
             <label for="titulacao">Titulação que será obtida</label>
-            <input name="titulacao" type="text" placeholder="Minha titulação" class="form-control" value=<%= @titulacao %>>
+            <input name="titulacao" type="text" placeholder="Minha titulação" class="form-control" value=<%= @data['titulacao'] %>>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="curso">Curso <small>(se o seu trabalho for uma monografia)</small></label>
-            <input name="curso" type="curso" placeholder="Meu curso" class="form-control" value=<%= @curso %>>
+            <input name="curso" type="curso" placeholder="Meu curso" class="form-control" value=<%= @data['curso'] %>>
           </div>
 
           <div class="form-group">
             <label for="programa">Programa <small>(se o seu trabalho for uma dissertação de mestrado ou tese)</small></label>
-            <input type="text" name="programa" placeholder="Programa de Pós-Graduação em XXX" class="form-control" value=<%= @programa %>>
+            <input type="text" name="programa" placeholder="Programa de Pós-Graduação em XXX" class="form-control" value=<%= @data['programa'] %>>
           </div>
 
           <div class="form-group">
             <label for="linha_de_pesquisa">Linha de pesquisa <small>(se o seu trabalho for uma dissertação de mestrado ou tese)</small></label>
-            <input type="text" name="linha_de_pesquisa" placeholder="Linha de pesquisa" class="form-control" value=<%= @linha_de_pesquisa %>>
+            <input type="text" name="linha_de_pesquisa" placeholder="Linha de pesquisa" class="form-control" value=<%= @data['linha_de_pesquisa'] %>>
           </div>
         </div>
       </div>
 
       <div class="form-group">
         <label for="proposito">Propósito personalizado</label>
-        <textarea id="proposito" name="proposito" type="text" rows="5" placeholder="Propósito" class="form-control"><%= @proposito %></textarea>
+        <textarea id="proposito" name="proposito" type="text" rows="5" placeholder="Propósito" class="form-control"><%= @data['proposito'] %></textarea>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
             <label for="siglas">Lista de Siglas</label>
-            <textarea id='siglas' name="siglas" type='text' rows='10' placeholder='SIGLA: Definição' class="form-control"><%= @siglas %></textarea>
+            <textarea id='siglas' name="siglas" type='text' rows='10' placeholder='SIGLA: Definição' class="form-control"><%= @data['siglas'] %></textarea>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="simbolos">Lista de Símbolos</label>
-            <textarea id='simbolos' name="simbolos" type='text' rows='10' placeholder='SÍMBOLO: Definição' class="form-control"><%= @simbolos %></textarea>
+            <textarea id='simbolos' name="simbolos" type='text' rows='10' placeholder='SÍMBOLO: Definição' class="form-control"><%= @data['simbolos'] %></textarea>
           </div>
         </div>
       </div>
-      
+
       <button type='submit' class='btn btn-primary' accesskey="s" title="Tecla de atalho: ALT+s">Salvar</button>
     </form>
