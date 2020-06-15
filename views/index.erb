@@ -4,7 +4,7 @@
           <div class="form-group">
             <label for="nivel">Nível de Educação do Trabalho</label>
             <select name="nivel" class="form-control">
-              <%= select_options(titulacao_options, @data['nivel'])%>
+              <%= select_options(nivel_options, @data['nivel'])%>
             </select>
           </div>
         </div>
@@ -12,8 +12,8 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="tipo">Projeto ou Proposta</label>
-            <select name="tipo" class="form-control">
-              <%= select_options(tipo_options, @data['tipo'])%>
+            <select name="tipo_do_trabalho" class="form-control">
+              <%= select_options(tipo_do_trabalho_options, @data['tipo_do_trabalho'])%>
             </select>
           </div>
         </div>
