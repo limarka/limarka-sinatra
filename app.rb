@@ -30,6 +30,7 @@ ListaTab = {
 =end
 
 get '/' do
+  @titulo = 'Formulário em HTML para o Limarka '
   @data = load_data
   erb :index
 end
